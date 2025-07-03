@@ -1,3 +1,7 @@
+// This code was included in the playwright boilerplate from running
+// `npm init playwright@latest`
+// https://playwright.dev/docs/intro#whats-installed
+
 import { test, expect } from '@playwright/test';
 
 test('has title', async ({ page }) => {

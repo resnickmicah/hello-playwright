@@ -1,3 +1,7 @@
+// This code was included in the playwright project boilerplate from running
+// `npm init playwright@latest`
+// https://playwright.dev/docs/intro#whats-installed
+
 import { test, expect, type Page } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
