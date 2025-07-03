@@ -19,6 +19,7 @@ test('Check A/B testing link', async ({ page }) => {
   await expect(page).toHaveURL(abTestingLinkPathPattern);
 });
 
+// TODO: Investigate parallelizing across separate test cases
 test('Check all links', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/');
   const listItems = await page.getByRole('listitem').all();
