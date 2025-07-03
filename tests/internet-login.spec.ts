@@ -8,7 +8,7 @@ import { test, expect } from '@playwright/test';
 test('Happy path', async ({ page }) => {
   // The common step of loading the login page can be extracted to a "beforeEach" block:
   // https://playwright.dev/docs/best-practices#make-tests-as-isolated-as-possible
-  await page.goto('http://the-internet.herokuapp.com/login');
+  await page.goto('https://the-internet.herokuapp.com/login');
 
   // Instead of repeating the element's selector on all the following lines like the codegen does,
   // I would add the following:
@@ -38,7 +38,7 @@ test('Happy path', async ({ page }) => {
 
 
 test('Correct username, wrong password', async ({ page }) => {
-  await page.goto('http://the-internet.herokuapp.com/login');
+  await page.goto('https://the-internet.herokuapp.com/login');
   await page.getByRole('textbox', { name: 'Username' }).click();
   await page.getByRole('textbox', { name: 'Username' }).fill('tomsmith');
   await page.getByRole('textbox', { name: 'Username' }).press('Tab');
@@ -55,7 +55,7 @@ test('Correct username, wrong password', async ({ page }) => {
 });
 
 test('Wrong username, correct password', async ({ page }) => {
-  await page.goto('http://the-internet.herokuapp.com/login');
+  await page.goto('https://the-internet.herokuapp.com/login');
   await page.getByRole('textbox', { name: 'Username' }).click();
   await page.getByRole('textbox', { name: 'Username' }).fill('wrongusername');
   await page.getByRole('textbox', { name: 'Password' }).click();
@@ -66,7 +66,7 @@ test('Wrong username, correct password', async ({ page }) => {
 });
 
 test('Wrong username, wrong password', async ({ page }) => {
-  await page.goto('http://the-internet.herokuapp.com/login');
+  await page.goto('https://the-internet.herokuapp.com/login');
   await page.getByRole('textbox', { name: 'Username' }).click();
   await page.getByRole('textbox', { name: 'Username' }).fill('wrongusername');
   await page.getByRole('textbox', { name: 'Username' }).press('Tab');

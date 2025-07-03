@@ -7,7 +7,7 @@ test.describe('Input numerical values directly', () => {
     { label: 'The square of your imagination', val: -1}
   ].forEach(({ label, val }) => {
     test(label, async ({ page }) => {
-      await page.goto('http://the-internet.herokuapp.com/inputs');
+      await page.goto('https://the-internet.herokuapp.com/inputs');
       const numInput = await page.getByRole('spinbutton');
       await numInput.click();
       await numInput.fill(val.toString());
@@ -18,7 +18,7 @@ test.describe('Input numerical values directly', () => {
 });
 
 test('Increment numerical value with keyboard', async ({ page }) => {
-  await page.goto('http://the-internet.herokuapp.com/inputs');
+  await page.goto('https://the-internet.herokuapp.com/inputs');
   const numInput = await page.getByRole('spinbutton');
   await expect(numInput).toBeEmpty();
   await numInput.click();
